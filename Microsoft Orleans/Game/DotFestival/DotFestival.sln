@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotFestival.Grains", "DotFe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotFestival.Server", "DotFestival.Server\DotFestival.Server.csproj", "{86F688D3-C954-470B-AF64-8A2E3965301F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotFestival.Client", "DotFestival.Client\DotFestival.Client.csproj", "{3C9AD360-70DA-4587-BF6F-3705CC5580A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotFestival.Client", "DotFestival.Client\DotFestival.Client.csproj", "{3C9AD360-70DA-4587-BF6F-3705CC5580A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotFestival.Map", "DotFestival.Map\DotFestival.Map.csproj", "{EB07FD00-BE24-439E-8C7D-AFD4975E5C3C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3C9AD360-70DA-4587-BF6F-3705CC5580A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C9AD360-70DA-4587-BF6F-3705CC5580A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C9AD360-70DA-4587-BF6F-3705CC5580A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB07FD00-BE24-439E-8C7D-AFD4975E5C3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB07FD00-BE24-439E-8C7D-AFD4975E5C3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB07FD00-BE24-439E-8C7D-AFD4975E5C3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB07FD00-BE24-439E-8C7D-AFD4975E5C3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

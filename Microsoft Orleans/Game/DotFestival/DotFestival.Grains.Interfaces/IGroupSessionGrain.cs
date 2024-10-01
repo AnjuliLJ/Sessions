@@ -1,8 +1,9 @@
 ﻿namespace DotFestival.Grains.Interfaces;
 
-public interface IGroupSessionGrain
+public interface IGroupSessionGrain : IGrainWithStringKey
 {
-    Task RegisterUser(IUserGrain user);
+    Task JoinSession(IUserGrain user);
     Task<List<IUserGrain>> GetUsers();
-    Task Close();
+    Task LeaveSession(IUserGrain user);
+    Task<string> GetMap();
 }

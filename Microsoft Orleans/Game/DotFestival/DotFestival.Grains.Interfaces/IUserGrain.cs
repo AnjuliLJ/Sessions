@@ -2,12 +2,9 @@
 {
     public interface IUserGrain : IGrainWithStringKey
     {
-        Task CreateGroup();
-        Task InviteToGroup(IUserGrain user);
-        Task Dance();
-        Task WalkTo(int x, int y);
+        Task WalkTo(Movement movement);
         Task SetName(string name);
         Task<string> GetName();
-        Task LeaveGroup(int groupId);
+        Task<int[]> GetPosition();
     }
 }
