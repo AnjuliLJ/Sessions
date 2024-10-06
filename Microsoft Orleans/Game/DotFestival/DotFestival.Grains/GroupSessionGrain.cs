@@ -29,29 +29,9 @@ public class GroupSessionGrain : IGroupSessionGrain
 
     public Task<string> GetMap()
     {
-        int width = 40;
-        int height = 20;
-        char[,] map = new char[width, height];
-
-        Random rand = new Random();
-        for (int y = 0; y < height; y++)
-        {
-            for (int x = 0; x < width; x++)
-            {
-                if (y == 0 ||
-                    y == (height - 1))
-                {
-                    map[x, y] = '-';
-                } else if (x == 0 || x == (width - 1))
-                {
-                    map[x, y] = '|';
-                }
-                else
-                {
-                    map[x, y] = ' ';
-                }
-            }
-        }
+        int width, height;
+        char[,] map;
+        DrawMap(out width, out height, out map);
 
         foreach (var user in _users)
         {
@@ -64,12 +44,38 @@ public class GroupSessionGrain : IGroupSessionGrain
             }
         }
 
-
         map = AddStage(map);
 
         StringBuilder sb = Draw(width, height, map);
 
         return Task.FromResult(sb.ToString());
+    }
+
+    private static void DrawMap(out int width, out int height, out char[,] map)
+    {
+        width = 40;
+        height = 20;
+        map = new char[width, height];
+        Random rand = new Random();
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                if (y == 0 ||
+                    y == (height - 1))
+                {
+                    map[x, y] = '-';
+                }
+                else if (x == 0 || x == (width - 1))
+                {
+                    map[x, y] = '|';
+                }
+                else
+                {
+                    map[x, y] = ' ';
+                }
+            }
+        }
     }
 
     private StringBuilder Draw(int width, int height, char[,] map)

@@ -18,10 +18,8 @@ Console.WriteLine("What is your name?");
 
 var name = Console.ReadLine();
 
-
 var user = client.GetGrain<IUserGrain>(name);
 await user.SetName(name);
-
 
 Console.WriteLine($"Welcome to the .NET Festival {name}");
 
@@ -68,6 +66,6 @@ static async Task Simulate(IClusterClient client, IUserGrain user, IGroupSession
             await u.WalkTo(direction);
         }
 
-        Task.Delay(1500).Wait();
+        Task.Delay(500).Wait();
     }
 }
