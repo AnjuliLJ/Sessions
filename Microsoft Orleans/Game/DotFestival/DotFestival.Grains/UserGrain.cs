@@ -6,6 +6,7 @@ public class UserGrain : IGrain, IUserGrain
 {
     private string _name { get; set; } = string.Empty;
     private int[] _position { get; set; } = [5, 5];
+    private string _color { get; set; } = "#FF0000";
 
     public Task SetName(string name)
     {
@@ -31,5 +32,16 @@ public class UserGrain : IGrain, IUserGrain
     public Task<int[]> GetPosition()
     {
         return Task.FromResult(_position);
+    }
+
+    public Task SetColor(string color)
+    {
+        _color = color;
+        return Task.CompletedTask;
+    }
+
+    public Task<string> GetColor()
+    {
+       return Task.FromResult(_color);
     }
 }

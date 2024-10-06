@@ -1,0 +1,79 @@
+﻿@page "/"
+@using SkiaSharp
+@using SkiaSharp.Views.Blazor
+@inject HttpClient http 
+
+<PageTitle>DotFestival Map</PageTitle>
+
+<h1>Find your friends</h1>
+<div style="position:relative">
+    <div style="position:absolute; top:0; left:0;">
+        <img src="Festival.png" width="400" height="600" />
+    </div>
+    <div style="position:absolute;top:0; left:0;z-index:10">
+        <SKCanvasView @ref="canvasView" Width="400" Height="600" OnPaintSurface="OnPaintSurface" />
+    </div>
+</div>
+
+
+@code {
+    private SKCanvasView canvasView;
+    private SKBitmap backgroundBitmap;
+    private List<SKPoint> dots;
+    private Random random;
+    private System.Timers.Timer timer;
+
+    private void OnPaintSurface(SKPaintSurfaceEventArgs e)
+    {
+        var canvas = e.Surface.Canvas;
+
+        canvas.Clear(SKColors.Transparent);
+
+        foreach (var dot in dots)
+        {
+            canvas.DrawCircle(dot, 5, new SKPaint() { Color = SKColor.Parse("#FF0000") }); // Draw red dots
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        dots = new List<SKPoint>();
+        random = new Random();
+
+        for (int i = 0; i < 3; i++)
+        {
+            dots.Add(new SKPoint(random.Next(0, 600), random.Next(0, 400)));
+        }
+
+        // Set up a timer to update positions
+        timer = new System.Timers.Timer(1000);
+        timer.Elapsed += UpdatePositions;
+        timer.Start();
+    }
+
+    private void OnPaint(SKCanvas canvas, SKSurface surface)
+    {
+        // Draw the background image
+        canvas.DrawBitmap(backgroundBitmap, new SKRect(0, 0, 800, 600));
+
+        // Draw moving dots
+        foreach (var dot in dots)
+        {
+            canvas.DrawCircle(dot, 5, new SKPaint() {Color = SKColor.Parse("#FF0000")}); // Draw red dots
+        }
+    }
+
+    private void UpdatePositions(object sender, System.Timers.ElapsedEventArgs e)
+    {
+        for (int i = 0; i < dots.Count; i++)
+        {
+            dots[i] = new SKPoint(
+                (dots[i].X + random.Next(-5, 6)) % 600,
+                (dots[i].Y + random.Next(-5, 6)) % 400
+            );
+        }
+        canvasView.Invalidate();
+    }
+}
+
+
