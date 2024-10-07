@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.8" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Orleans.Client" Version="8.2.0" />
     <PackageReference Include="SkiaSharp.Views.Blazor" Version="2.88.8" />
   </ItemGroup>
 

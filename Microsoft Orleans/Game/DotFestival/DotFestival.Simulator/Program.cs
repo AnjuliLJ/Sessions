@@ -49,7 +49,7 @@ static async Task SimulateMovement(IClusterClient client, IGroupSessionGrain ses
                 _ => Movement.Up
             };
             await u.WalkTo(direction);
-            Task.Delay(500).Wait();
+            Task.Delay(200).Wait();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿@page "/"
 @using SkiaSharp
 @using SkiaSharp.Views.Blazor
-@inject HttpClient http 
+@inject IClusterClient client
 
 <PageTitle>DotFestival Map</PageTitle>
 
@@ -44,6 +44,8 @@
         {
             dots.Add(new SKPoint(random.Next(0, 600), random.Next(0, 400)));
         }
+
+
 
         // Set up a timer to update positions
         timer = new System.Timers.Timer(1000);

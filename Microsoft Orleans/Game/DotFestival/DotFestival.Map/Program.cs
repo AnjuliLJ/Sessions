@@ -13,11 +13,10 @@ Console.WriteLine("Connected to server");
 
 var client = host.Services.GetRequiredService<IClusterClient>();
 
-
 var group = client.GetGrain<IGroupSessionGrain>("1");
 while (true)
 {
     var game = await group.GetMap();
     Console.WriteLine(game);
-    Task.Delay(200).Wait();
+    Task.Delay(500).Wait();
 }
