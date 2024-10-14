@@ -18,5 +18,5 @@ while (true)
 {
     var game = await group.GetMap();
     Console.WriteLine(game);
-    Task.Delay(500).Wait();
+    Task.Delay(700).Wait();
 }

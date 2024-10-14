@@ -1,7 +1,6 @@
 ﻿using DotFestival.Grains.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
 using var host = Host.CreateDefaultBuilder(args)
     .UseOrleansClient(clientBuilder =>
@@ -21,19 +20,6 @@ var name = Console.ReadLine();
 
 var user = client.GetGrain<IUserGrain>(name);
 await user.SetName(name);
-
-Console.WriteLine("Choose a color: blue, green or black");
-
-var color = Console.ReadLine();
-var colorCode = color switch
-{
-    "blue" => "#0000FF",
-    "green" => "#008000",
-    "black" => "#000000",
-    _ => "#FFFFFF"
-};
-
-await user.SetColor(colorCode);
 
 Console.WriteLine($"Welcome to the .NET Festival {name}");
 
