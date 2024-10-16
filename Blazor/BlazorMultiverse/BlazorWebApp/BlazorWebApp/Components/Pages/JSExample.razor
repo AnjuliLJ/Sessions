@@ -1,0 +1,23 @@
+﻿@page "/JSExample"
+@using Microsoft.JSInterop
+@inject IJSRuntime jsRuntime
+@rendermode InteractiveServer
+
+<h3>Javascript Interop example</h3>
+
+<button @onclick="OnBtnClicked">Click me!</button>
+
+@code {
+    private IJSObjectReference? module;
+
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        module = await jsRuntime.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/JSExample.razor.js");
+    }
+
+    public async void OnBtnClicked()
+    {
+        await module.InvokeVoidAsync("showMessage");
+    }
+}

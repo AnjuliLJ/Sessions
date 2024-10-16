@@ -5,13 +5,13 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MauiBlazorHybrid", "MauiBlazorHybrid\MauiBlazorHybrid.csproj", "{3900AF7B-F9EA-483A-A33A-CD3AABB2FB4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorServer", "BlazorServer\BlazorServer.csproj", "{245409CD-BCD2-496C-B7B7-949AF8AF022F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorServer", "BlazorServer\BlazorServer.csproj", "{245409CD-BCD2-496C-B7B7-949AF8AF022F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAssembly", "BlazorWebAssembly\BlazorWebAssembly.csproj", "{A402F088-39DA-439B-8C1B-AAFE09CE8F98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssembly", "BlazorWebAssembly\BlazorWebAssembly.csproj", "{A402F088-39DA-439B-8C1B-AAFE09CE8F98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp\BlazorWebApp.csproj", "{91725731-5B25-4F92-9CB3-2173E10CBF70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp", "BlazorWebApp\BlazorWebApp\BlazorWebApp.csproj", "{91725731-5B25-4F92-9CB3-2173E10CBF70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebApp.Client", "BlazorWebApp\BlazorWebApp.Client\BlazorWebApp.Client.csproj", "{1493330C-D736-4D94-83B3-BD7DE850B198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebApp.Client", "BlazorWebApp\BlazorWebApp.Client\BlazorWebApp.Client.csproj", "{1493330C-D736-4D94-83B3-BD7DE850B198}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

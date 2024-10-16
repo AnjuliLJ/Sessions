@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiBlazorHybrid.Services;
+using MauiBlazorHybrid.ViewModels;
+using MauiBlazorHybrid.Views;
+using Microsoft.Extensions.Logging;
 
 namespace MauiBlazorHybrid
 {
@@ -13,6 +16,11 @@ namespace MauiBlazorHybrid
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 });
+
+            builder.Services.AddScoped<HelloPage>();
+            builder.Services.AddScoped<HelloViewModel>();
+
+            builder.Services.AddScoped<IHelloService, HelloService>();
 
             builder.Services.AddMauiBlazorWebView();
 
